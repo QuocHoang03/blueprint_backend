@@ -1,0 +1,122 @@
+import db from "../models/index";
+import bcrypt from "bcryptjs";
+import { Op } from "sequelize";
+
+// Check Email
+const checkEmailExist = async (email) => {
+  let user = await db.User.findOne({
+    where: {
+      email: email,
+    },
+  });
+  if (user) {
+    return true;
+  }
+  return false;
+};
+
+// Check Phone
+const checkPhoneExist = async (phone) => {
+  let user = await db.User.findOne({
+    where: {
+      phone: phone,
+    },
+  });
+  if (user) {
+    return true;
+  }
+  return false;
+};
+
+// Hash Password
+const hashUserPassword = async (password) => {
+  var salt = bcrypt.genSaltSync(10);
+  var hashPassword = bcrypt.hashSync(password, salt);
+  return hashPassword;
+};
+
+const registerNewUser = async (rawUserData) => {
+  try {
+    // Check Email
+    let isEmailExist = await checkEmailExist(rawUserData.email);
+    if (isEmailExist) {
+      return {
+        EM: "The email is already exist",
+        EC: 1,
+        DT: "",
+      };
+    }
+
+    // Check Phone
+    let isPhoneExist = await checkPhoneExist(rawUserData.phone);
+    if (isPhoneExist) {
+      return {
+        EM: "The phone is already exist",
+        EC: 1,
+        DT: "",
+      };
+    }
+
+    // Hash Password
+    let hashPassword = await hashUserPassword(rawUserData.password);
+
+    await db.User.create({
+      lastName: rawUserData.lastName,
+      firstName: rawUserData.firstName,
+      email: rawUserData.email,
+      password: hashPassword,
+      phone: rawUserData.phone,
+      sex: rawUserData.sex,
+    });
+
+    return {
+      EM: "A user is created successfully!",
+      EC: 0,
+      DT: "",
+    };
+  } catch (error) {
+    return {
+      EM: "Something wrongs with services",
+      EC: 1,
+      DT: [],
+    };
+  }
+};
+
+// Login
+const checkPassword = async (inputPassword, hashPassword) => {
+  return bcrypt.compareSync(inputPassword, hashPassword); // true or false
+};
+const handleLoginUser = async (data) => {
+  try {
+    let user = await db.User.findOne({
+      where: {
+        [Op.or]: [{ email: data.valueLogin }, { phone: data.valueLogin }],
+      },
+    });
+    if (user) {
+      let isCorrectPassword = await checkPassword(data.password, user.password);
+      if (isCorrectPassword) {
+        return {
+          EM: "Login user success",
+          EC: 0,
+          DT: [],
+        };
+      }
+    }
+    return {
+      EM: "Your email/phone number or password is incorrect!",
+      EC: 1,
+      DT: [],
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      EM: "Something wrongs with services",
+      EC: 1,
+      DT: [],
+    };
+  }
+};
+
+module.exports = { registerNewUser, handleLoginUser };
