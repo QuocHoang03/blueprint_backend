@@ -1,13 +1,13 @@
 import db from "../models/index";
 
-const readGroup = async () => {
+const readGroupRole = async () => {
   try {
-    let data = await db.Group.findAll({
-      attributes: ["id", "name", "description"],
-      order: [["name", "ASC"]],
+    let data = await db.Group_Role.findAll({
+      attributes: ["id", "groupId", "roleId"],
+      order: [["groupId", "ASC"]],
     });
     return {
-      EM: "Get groups success",
+      EM: "Read group role success",
       EC: 0,
       DT: data,
     };
@@ -21,10 +21,10 @@ const readGroup = async () => {
   }
 };
 
-const readGroupWithPagination = async (page, limit) => {
+const readGroupRoleWithPagination = async (page, limit) => {
   try {
     let offset = (page - 1) * limit;
-    let { count, rows } = await db.Role.findAndCountAll({
+    let { count, rows } = await db.Group_Role.findAndCountAll({
       offset: offset,
       limit: limit,
       attributes: ["id", "groupId", "roleId"],
@@ -37,7 +37,7 @@ const readGroupWithPagination = async (page, limit) => {
       Group: rows,
     };
     return {
-      EM: "Read user success",
+      EM: "Read group role success",
       EC: 0,
       DT: data,
     };
@@ -51,18 +51,20 @@ const readGroupWithPagination = async (page, limit) => {
   }
 };
 
-const createGroup = async (data) => {
+const createGroupRole = async (data) => {
+  console.log(data);
   try {
-    await db.Group.create({
-      groupId: data.groupId,
-      roleId: data.roleId,
+    await db.Group_Role.create({
+      GroupId: data.groupId,
+      RoleId: data.roleId,
     });
     return {
-      EM: "A group is created successfully!",
+      EM: "A group role is created successfully!",
       EC: 0,
       DT: [],
     };
   } catch (error) {
+    console.log(error);
     return {
       EM: "Something wrongs with services",
       EC: 1,
@@ -71,9 +73,9 @@ const createGroup = async (data) => {
   }
 };
 
-const updateGroup = async (data) => {
+const updateGroupRole = async (data) => {
   try {
-    let group = await db.Group.findOne({
+    let group = await db.Group_Role.findOne({
       where: {
         id: data.id,
       },
@@ -84,13 +86,13 @@ const updateGroup = async (data) => {
         roleId: data.roleId,
       });
       return {
-        EM: "Update group success",
+        EM: "Update group role success",
         EC: 0,
         DT: [],
       };
     } else {
       return {
-        EM: "Group not exist",
+        EM: "Group role not exist",
         EC: 2,
         DT: [],
       };
@@ -105,9 +107,9 @@ const updateGroup = async (data) => {
   }
 };
 
-const deleteGroup = async (id) => {
+const deleteGroupRole = async (id) => {
   try {
-    let group = await db.Group.findOne({
+    let group = await db.Group_Role.findOne({
       where: {
         id: id,
       },
@@ -135,9 +137,9 @@ const deleteGroup = async (id) => {
   }
 };
 module.exports = {
-  readGroup,
-  readGroupWithPagination,
-  createGroup,
-  updateGroup,
-  deleteGroup,
+  readGroupRole,
+  readGroupRoleWithPagination,
+  createGroupRole,
+  updateGroupRole,
+  deleteGroupRole,
 };

@@ -1,17 +1,17 @@
-import groupService from "../services/groupService";
+import groupRoleService from "../services/groupRoleService";
 
 const readFunc = async (req, res) => {
   try {
     if (req.query.page && req.query.limit) {
       let { page, limit } = req.query;
-      let data = await groupService.readGroupWithPagination(+page, +limit);
+      let data = await groupRoleService.readGroupRoleWithPagination(+page, +limit);
       return res.status(200).json({
         EM: data.EM,
         EC: data.EC,
         DT: data.DT,
       });
     } else {
-      let data = await groupService.readGroup();
+      let data = await groupRoleService.readGroupRole();
       return res.status(200).json({
         EM: data.EM,
         EC: data.EC,
@@ -37,7 +37,7 @@ const createFunc = async (req, res) => {
         DT: "",
       });
     }
-    let data = await groupService.createGroup(req.body.data);
+    let data = await groupRoleService.createGroupRole(req.body.data);
     return res.status(200).json({
       EM: data.EM,
       EC: data.EC,
@@ -54,7 +54,7 @@ const createFunc = async (req, res) => {
 };
 const updateFunc = async (req, res) => {
   try {
-    let data = await groupService.updateGroup(req.body.data);
+    let data = await groupRoleService.updateGroupRole(req.body.data);
     return res.status(200).json({
       EM: data.EM,
       EC: data.EC,
@@ -72,7 +72,7 @@ const updateFunc = async (req, res) => {
 const deleteFunc = async (req, res) => {
   try {
     let { id } = req.body;
-    let data = await groupService.deleteGroup(id);
+    let data = await groupRoleService.deleteGroupRole(id);
     return res.status(200).json({
       EM: data.EM,
       EC: data.EC,
