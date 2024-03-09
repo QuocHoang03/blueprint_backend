@@ -35,7 +35,6 @@ const registerUser = async (req, res) => {
 };
 
 // Login
-
 const loginUser = async (req, res) => {
   try {
     if (!req.body.data.valueLogin || !req.body.data.password) {
@@ -54,6 +53,9 @@ const loginUser = async (req, res) => {
     }
     // call service
     let data = await registerLoginService.handleLoginUser(req.body.data);
+
+    // set cookie
+    res.cookie("jwt", data.DT.access_token, { httpOnly: true, maxAge: 60 * 60 * 1000 });
 
     return res.status(200).json({
       EM: data.EM,

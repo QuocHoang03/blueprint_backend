@@ -8,7 +8,6 @@ const getAllUser = async () => {
       include: { model: db.Group, attributes: ["id", "name", "description"] },
       order: [["id", "DESC"]],
     });
-    console.log(users);
     if (users) {
       return {
         EM: "Get data success",

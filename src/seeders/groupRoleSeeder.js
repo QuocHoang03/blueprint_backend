@@ -9,23 +9,35 @@ module.exports = {
      * Example:
      */
     await queryInterface.bulkInsert(
-      "Group",
+      "Group_Role",
       [
         {
-          name: "Guess",
-          description: "Người dùng bala bala",
+          groupId: 3,
+          roleId: 1,
         },
         {
-          name: "Dev",
-          description: "Dev bala bala",
+          groupId: 3,
+          roleId: 2,
         },
         {
-          name: "Leader",
-          description: "Leader bala bala",
+          groupId: 3,
+          roleId: 3,
         },
         {
-          name: "Customer",
-          description: "Customer bala bala",
+          groupId: 3,
+          roleId: 4,
+        },
+        {
+          groupId: 2,
+          roleId: 1,
+        },
+        {
+          groupId: 2,
+          roleId: 2,
+        },
+        {
+          groupId: 2,
+          roleId: 3,
         },
       ],
       {}

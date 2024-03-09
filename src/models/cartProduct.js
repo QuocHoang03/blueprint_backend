@@ -1,7 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Group_Role extends Model {
+  class Cart_Product extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,15 +11,15 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Group_Role.init(
+  Cart_Product.init(
     {
-      groupId: DataTypes.INTEGER,
-      roleId: DataTypes.INTEGER,
+      cartId: DataTypes.INTEGER,
+      productId: DataTypes.INTEGER,
     },
     {
       sequelize,
-      modelName: "Group_Role",
+      modelName: "Cart_Product",
     }
   );
-  return Group_Role;
+  return Cart_Product;
 };

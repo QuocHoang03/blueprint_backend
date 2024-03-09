@@ -9,23 +9,23 @@ module.exports = {
      * Example:
      */
     await queryInterface.bulkInsert(
-      "Group",
+      "Role",
       [
         {
-          name: "Guess",
-          description: "Người dùng bala bala",
+          url: "/read/user",
+          description: "Lấy ra User",
         },
         {
-          name: "Dev",
-          description: "Dev bala bala",
+          url: "/create/user",
+          description: "Tạo User",
         },
         {
-          name: "Leader",
-          description: "Leader bala bala",
+          url: "/update/user",
+          description: "Cập nhật User",
         },
         {
-          name: "Customer",
-          description: "Customer bala bala",
+          url: "/delete/user",
+          description: "Xoá User",
         },
       ],
       {}
