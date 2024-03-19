@@ -10,7 +10,15 @@ cloudinary.config({
 // Read Product
 const readFunc = async (req, res) => {
   try {
-    if (req.query.page && req.query.limit) {
+    if (req.query.page && req.query.limit && req.query.category) {
+      let { page, limit, category } = req.query;
+      let data = await productService.readProductWithCategory(+page, +limit, category);
+      return res.status(200).json({
+        EM: data.EM,
+        EC: data.EC,
+        DT: data.DT,
+      });
+    } else if (req.query.page && req.query.limit) {
       let { page, limit } = req.query;
       let data = await productService.readProductWithPagination(+page, +limit);
       return res.status(200).json({

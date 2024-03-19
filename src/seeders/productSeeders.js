@@ -13,7 +13,7 @@ module.exports = {
       [
         {
           id: 1,
-          categoryId: 4,
+          categoryId: 1,
           title: "Mẫu nhà cấp 4 mái thái 20x8.5m 3 phòng ngủ",
           imageAvatar:
             '["https://res.cloudinary.com/daofedrqe/image/upload/v1710776924/blueprint_image_avatar/fcxbcf1xrzbrawtliteu.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776926/blueprint_image_avatar/szwohq4bot3pbozo0gpi.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776928/blueprint_image_avatar/c7dlmb3elxbdluwdnzss.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776930/blueprint_image_avatar/tbyxcdgmhui8lf1vv8fp.png"]',
@@ -31,7 +31,7 @@ module.exports = {
         },
         {
           id: 2,
-          categoryId: 4,
+          categoryId: 1,
           title: "Nhà phố 2 tầng 4 phòng ngủ 5x16m",
           imageAvatar:
             '["https://res.cloudinary.com/daofedrqe/image/upload/v1710776924/blueprint_image_avatar/fcxbcf1xrzbrawtliteu.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776926/blueprint_image_avatar/szwohq4bot3pbozo0gpi.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776928/blueprint_image_avatar/c7dlmb3elxbdluwdnzss.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776930/blueprint_image_avatar/tbyxcdgmhui8lf1vv8fp.png"]',
@@ -49,7 +49,7 @@ module.exports = {
         },
         {
           id: 3,
-          categoryId: 4,
+          categoryId: 1,
           title: "Mẫu nhà cấp 4 mái thái 20x8.5m 3 phòng ngủ 2",
           imageAvatar:
             '["https://res.cloudinary.com/daofedrqe/image/upload/v1710776924/blueprint_image_avatar/fcxbcf1xrzbrawtliteu.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776926/blueprint_image_avatar/szwohq4bot3pbozo0gpi.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776928/blueprint_image_avatar/c7dlmb3elxbdluwdnzss.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776930/blueprint_image_avatar/tbyxcdgmhui8lf1vv8fp.png"]',
@@ -67,7 +67,7 @@ module.exports = {
         },
         {
           id: 4,
-          categoryId: 4,
+          categoryId: 1,
           title: "Nhà phố 2 tầng 4 phòng ngủ 5x16m 2",
           imageAvatar:
             '["https://res.cloudinary.com/daofedrqe/image/upload/v1710776924/blueprint_image_avatar/fcxbcf1xrzbrawtliteu.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776926/blueprint_image_avatar/szwohq4bot3pbozo0gpi.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776928/blueprint_image_avatar/c7dlmb3elxbdluwdnzss.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776930/blueprint_image_avatar/tbyxcdgmhui8lf1vv8fp.png"]',
@@ -85,7 +85,7 @@ module.exports = {
         },
         {
           id: 5,
-          categoryId: 4,
+          categoryId: 1,
           title: "Mẫu nhà cấp 4 mái thái 20x8.5m 3 phòng ngủ 3",
           imageAvatar:
             '["https://res.cloudinary.com/daofedrqe/image/upload/v1710776924/blueprint_image_avatar/fcxbcf1xrzbrawtliteu.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776926/blueprint_image_avatar/szwohq4bot3pbozo0gpi.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776928/blueprint_image_avatar/c7dlmb3elxbdluwdnzss.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776930/blueprint_image_avatar/tbyxcdgmhui8lf1vv8fp.png"]',
@@ -103,7 +103,7 @@ module.exports = {
         },
         {
           id: 6,
-          categoryId: 4,
+          categoryId: 1,
           title: "Nhà phố 2 tầng 4 phòng ngủ 5x16m 3",
           imageAvatar:
             '["https://res.cloudinary.com/daofedrqe/image/upload/v1710776924/blueprint_image_avatar/fcxbcf1xrzbrawtliteu.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776926/blueprint_image_avatar/szwohq4bot3pbozo0gpi.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776928/blueprint_image_avatar/c7dlmb3elxbdluwdnzss.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776930/blueprint_image_avatar/tbyxcdgmhui8lf1vv8fp.png"]',
@@ -121,7 +121,7 @@ module.exports = {
         },
         {
           id: 7,
-          categoryId: 4,
+          categoryId: 1,
           title: "Mẫu nhà cấp 4 mái thái 20x8.5m 3 phòng ngủ 4",
           imageAvatar:
             '["https://res.cloudinary.com/daofedrqe/image/upload/v1710776924/blueprint_image_avatar/fcxbcf1xrzbrawtliteu.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776926/blueprint_image_avatar/szwohq4bot3pbozo0gpi.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776928/blueprint_image_avatar/c7dlmb3elxbdluwdnzss.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776930/blueprint_image_avatar/tbyxcdgmhui8lf1vv8fp.png"]',
@@ -139,7 +139,7 @@ module.exports = {
         },
         {
           id: 8,
-          categoryId: 4,
+          categoryId: 1,
           title: "Nhà phố 2 tầng 4 phòng ngủ 5x16m 4",
           imageAvatar:
             '["https://res.cloudinary.com/daofedrqe/image/upload/v1710776924/blueprint_image_avatar/fcxbcf1xrzbrawtliteu.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776926/blueprint_image_avatar/szwohq4bot3pbozo0gpi.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776928/blueprint_image_avatar/c7dlmb3elxbdluwdnzss.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776930/blueprint_image_avatar/tbyxcdgmhui8lf1vv8fp.png"]',
@@ -157,7 +157,7 @@ module.exports = {
         },
         {
           id: 9,
-          categoryId: 4,
+          categoryId: 1,
           title: "Mẫu nhà cấp 4 mái thái 20x8.5m 3 phòng ngủ 5",
           imageAvatar:
             '["https://res.cloudinary.com/daofedrqe/image/upload/v1710776924/blueprint_image_avatar/fcxbcf1xrzbrawtliteu.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776926/blueprint_image_avatar/szwohq4bot3pbozo0gpi.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776928/blueprint_image_avatar/c7dlmb3elxbdluwdnzss.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776930/blueprint_image_avatar/tbyxcdgmhui8lf1vv8fp.png"]',
@@ -175,7 +175,7 @@ module.exports = {
         },
         {
           id: 10,
-          categoryId: 4,
+          categoryId: 1,
           title: "Nhà phố 2 tầng 4 phòng ngủ 5x16m 5",
           imageAvatar:
             '["https://res.cloudinary.com/daofedrqe/image/upload/v1710776924/blueprint_image_avatar/fcxbcf1xrzbrawtliteu.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776926/blueprint_image_avatar/szwohq4bot3pbozo0gpi.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776928/blueprint_image_avatar/c7dlmb3elxbdluwdnzss.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776930/blueprint_image_avatar/tbyxcdgmhui8lf1vv8fp.png"]',
@@ -193,7 +193,7 @@ module.exports = {
         },
         {
           id: 11,
-          categoryId: 4,
+          categoryId: 1,
           title: "Mẫu nhà cấp 4 mái thái 20x8.5m 3 phòng ngủ 6",
           imageAvatar:
             '["https://res.cloudinary.com/daofedrqe/image/upload/v1710776924/blueprint_image_avatar/fcxbcf1xrzbrawtliteu.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776926/blueprint_image_avatar/szwohq4bot3pbozo0gpi.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776928/blueprint_image_avatar/c7dlmb3elxbdluwdnzss.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776930/blueprint_image_avatar/tbyxcdgmhui8lf1vv8fp.png"]',
@@ -211,7 +211,7 @@ module.exports = {
         },
         {
           id: 12,
-          categoryId: 4,
+          categoryId: 1,
           title: "Nhà phố 2 tầng 4 phòng ngủ 5x16m 6",
           imageAvatar:
             '["https://res.cloudinary.com/daofedrqe/image/upload/v1710776924/blueprint_image_avatar/fcxbcf1xrzbrawtliteu.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776926/blueprint_image_avatar/szwohq4bot3pbozo0gpi.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776928/blueprint_image_avatar/c7dlmb3elxbdluwdnzss.png","https://res.cloudinary.com/daofedrqe/image/upload/v1710776930/blueprint_image_avatar/tbyxcdgmhui8lf1vv8fp.png"]',

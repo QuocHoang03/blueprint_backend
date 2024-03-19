@@ -37,6 +37,58 @@ const readProduct = async () => {
     };
   }
 };
+const readProductWithCategory = async (page, limit, category) => {
+  try {
+    const isFindCategory = await db.Category.findOne({
+      attributes: ["id", "name", "description"],
+      where: { description: category },
+    });
+    if (isFindCategory) {
+      let offset = (page - 1) * limit;
+      let { count, rows } = await db.Product.findAndCountAll({
+        where: { categoryId: isFindCategory.id },
+        offset: offset,
+        limit: limit,
+        attributes: [
+          "id",
+          "categoryId",
+          "title",
+          "imageAvatar",
+          "imageDetail",
+          "description",
+          "price",
+          "numberOfFloors",
+          "width",
+          "length",
+          "roomNumber",
+          "facade",
+          "productCode",
+          "slug",
+        ],
+        order: [["title", "ASC"]],
+        include: [{ model: db.Category, attributes: ["id", "name", "description"] }],
+      });
+      const totalPages = Math.ceil(count / limit);
+      let data = {
+        totalRows: count,
+        totalPages: totalPages,
+        products: rows,
+      };
+      return {
+        EM: "Read product success",
+        EC: 0,
+        DT: data,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+    return {
+      EM: "Something wrongs with service",
+      EC: 1,
+      DT: [],
+    };
+  }
+};
 const readProductWithPagination = async (page, limit) => {
   try {
     let offset = (page - 1) * limit;
@@ -270,6 +322,7 @@ const deleteProduct = async (id) => {
 
 module.exports = {
   readProduct,
+  readProductWithCategory,
   readProductWithPagination,
   readProductDetail,
   createProduct,
