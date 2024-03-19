@@ -11,21 +11,21 @@ module.exports = {
     await queryInterface.bulkInsert(
       "Group",
       [
+        // {
+        //   name: "Leader",
+        //   description: "Leader Website",
+        // },
+        // {
+        //   name: "Dev",
+        //   description: "Dev Website",
+        // },
+        // {
+        //   name: "Customer",
+        //   description: "Customer Website",
+        // },
         {
-          name: "Guess",
-          description: "Người dùng bala bala",
-        },
-        {
-          name: "Dev",
-          description: "Dev bala bala",
-        },
-        {
-          name: "Leader",
-          description: "Leader bala bala",
-        },
-        {
-          name: "Customer",
-          description: "Customer bala bala",
+          name: "zzzDemo",
+          description: "Demo Website",
         },
       ],
       {}

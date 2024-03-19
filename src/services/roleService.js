@@ -6,7 +6,6 @@ const readRole = async () => {
       attributes: ["id", "url", "description"],
       order: [["description", "ASC"]],
     });
-    console.log(data);
     return {
       EM: "Read user success",
       EC: 0,

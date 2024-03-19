@@ -4,6 +4,8 @@ import userController from "../controllers/userController";
 import groupController from "../controllers/groupController";
 import groupRoleController from "../controllers/groupRoleController";
 import roleController from "../controllers/roleController";
+import productController from "../controllers/productController";
+import categoryController from "../controllers/categoryController";
 import { checkUserJWT, checkUserPermission } from "../middleware/JWTAction";
 
 const router = express.Router();
@@ -12,7 +14,10 @@ const adminRoute = (app) => {
   // login and register
   router.post("/user/register", registerLoginController.registerUser);
   router.post("/user/login", registerLoginController.loginUser);
-  // router.get("/login", userController.loginUser);
+  router.post("/user/logout", registerLoginController.logoutUser);
+
+  // Read JWT
+  router.get("/user/jwt-token", registerLoginController.readJWT);
 
   // User
   router.get("/user/read", checkUserJWT, checkUserPermission, userController.readFunc);
@@ -21,22 +26,50 @@ const adminRoute = (app) => {
   router.delete("/user/delete", checkUserJWT, checkUserPermission, userController.deleteFunc);
 
   // Group
-  router.get("/group/read", groupController.readFunc);
-  router.post("/group/create", groupController.createFunc);
-  router.put("/group/update", groupController.updateFunc);
-  router.delete("/group/delete", groupController.deleteFunc);
+  router.get("/group/read", checkUserJWT, checkUserPermission, groupController.readFunc);
+  router.post("/group/create", checkUserJWT, checkUserPermission, groupController.createFunc);
+  router.put("/group/update", checkUserJWT, checkUserPermission, groupController.updateFunc);
+  router.delete("/group/delete", checkUserJWT, checkUserPermission, groupController.deleteFunc);
 
   // Group Role
-  router.get("/group-role/read", groupRoleController.readFunc);
-  router.post("/group-role/create", groupRoleController.createFunc);
-  router.put("/group-role/update", groupRoleController.updateFunc);
-  router.delete("/group-role/delete", groupRoleController.deleteFunc);
+  router.get("/group-role/read", checkUserJWT, checkUserPermission, groupRoleController.readFunc);
+  router.post(
+    "/group-role/create",
+    checkUserJWT,
+    checkUserPermission,
+    groupRoleController.createFunc
+  );
+  router.put(
+    "/group-role/update",
+    checkUserJWT,
+    checkUserPermission,
+    groupRoleController.updateFunc
+  );
+  router.delete(
+    "/group-role/delete",
+    checkUserJWT,
+    checkUserPermission,
+    groupRoleController.deleteFunc
+  );
 
   // Role
-  router.get("/role/read", roleController.readFunc);
-  router.post("/role/create", roleController.createFunc);
-  router.put("/role/update", roleController.updateFunc);
-  router.delete("/role/delete", roleController.deleteFunc);
+  router.get("/role/read", checkUserJWT, checkUserPermission, roleController.readFunc);
+  router.post("/role/create", checkUserJWT, checkUserPermission, roleController.createFunc);
+  router.put("/role/update", checkUserJWT, checkUserPermission, roleController.updateFunc);
+  router.delete("/role/delete", checkUserJWT, checkUserPermission, roleController.deleteFunc);
+
+  // Product
+  router.get("/product/read", productController.readFunc);
+  router.get("/product/read/:slug", productController.readFuncDetail);
+  router.post("/product/create", productController.createFunc);
+  router.put("/product/update", productController.updateFunc);
+  router.delete("/product/delete", productController.deleteFunc);
+
+  // Category
+  router.get("/category/read", categoryController.readFunc);
+  router.post("/category/create", categoryController.createFunc);
+  router.put("/category/update", categoryController.updateFunc);
+  router.delete("/category/delete", categoryController.deleteFunc);
 
   return app.use("/api/v1", router);
 };

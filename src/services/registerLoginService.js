@@ -71,7 +71,7 @@ const registerNewUser = async (rawUserData) => {
       password: hashPassword,
       phone: rawUserData.phone,
       sex: rawUserData.sex,
-      groupId: 1,
+      groupId: 3,
     });
 
     return {
@@ -92,6 +92,7 @@ const registerNewUser = async (rawUserData) => {
 const checkPassword = async (inputPassword, hashPassword) => {
   return bcrypt.compareSync(inputPassword, hashPassword); // true or false
 };
+
 const handleLoginUser = async (data) => {
   try {
     let user = await db.User.findOne({
@@ -102,21 +103,25 @@ const handleLoginUser = async (data) => {
     if (user) {
       let isCorrectPassword = await checkPassword(data.password, user.password);
       if (isCorrectPassword) {
-        // let token
-        // test roles
+        let { lastName, firstName, address, sex } = user.dataValues;
+        let dataUsers = { lastName, firstName, address, sex };
         let groupWithRoles = await getGroupWithRoles(user);
         let payload = {
           email: user.email,
           groupWithRoles,
           expiresIn: process.env.JWT_EXPIRES_IN, // 60 milliseconds
         };
-        let token = createJWT(payload);
+        let token = await createJWT(payload);
+        await user.update({
+          refreshToken: token,
+        });
         return {
           EM: "Login user success",
           EC: 0,
           DT: {
             access_token: token,
             groupWithRoles,
+            dataUsers,
           },
         };
       }

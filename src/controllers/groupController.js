@@ -29,8 +29,8 @@ const readFunc = async (req, res) => {
 };
 const createFunc = async (req, res) => {
   try {
-    const { groupId, roleId } = req.body.data;
-    if (!groupId || !roleId) {
+    const { name, description } = req.body.data;
+    if (!name || !description) {
       return res.status(200).json({
         EM: "Missing Required Parameters",
         EC: 1,

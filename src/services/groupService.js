@@ -24,17 +24,17 @@ const readGroup = async () => {
 const readGroupWithPagination = async (page, limit) => {
   try {
     let offset = (page - 1) * limit;
-    let { count, rows } = await db.Role.findAndCountAll({
+    let { count, rows } = await db.Group.findAndCountAll({
       offset: offset,
       limit: limit,
-      attributes: ["id", "groupId", "roleId"],
+      attributes: ["id", "name", "description"],
       order: [["name", "ASC"]],
     });
     const totalPages = Math.ceil(count / limit);
     let data = {
       totalRows: count,
       totalPages: totalPages,
-      Group: rows,
+      groups: rows,
     };
     return {
       EM: "Read user success",
@@ -54,8 +54,8 @@ const readGroupWithPagination = async (page, limit) => {
 const createGroup = async (data) => {
   try {
     await db.Group.create({
-      groupId: data.groupId,
-      roleId: data.roleId,
+      name: data.name,
+      description: data.description,
     });
     return {
       EM: "A group is created successfully!",
@@ -80,8 +80,8 @@ const updateGroup = async (data) => {
     });
     if (group) {
       await group.update({
-        groupId: data.groupId,
-        roleId: data.roleId,
+        name: data.name,
+        description: data.description,
       });
       return {
         EM: "Update group success",
