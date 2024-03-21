@@ -13,19 +13,19 @@ module.exports = {
       [
         {
           name: "Nhà cấp 4",
-          description: "Nhà cấp 4",
+          description: "nha-cap-4-dep",
         },
         {
           name: "Nhà phố",
-          description: "Nhà phố",
+          description: "nha-pho-dep",
         },
         {
           name: "Biệt thự",
-          description: "Biệt thự",
+          description: "mau-biet-thu-dep",
         },
         {
           name: "Khách sạn",
-          description: "Khách sạn",
+          description: "mau-khach-san-dep",
         },
       ],
       {}

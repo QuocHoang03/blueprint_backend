@@ -6,6 +6,7 @@ import groupRoleController from "../controllers/groupRoleController";
 import roleController from "../controllers/roleController";
 import productController from "../controllers/productController";
 import categoryController from "../controllers/categoryController";
+import heartController from "../controllers/heartController";
 import { checkUserJWT, checkUserPermission } from "../middleware/JWTAction";
 
 const router = express.Router();
@@ -70,6 +71,12 @@ const adminRoute = (app) => {
   router.post("/category/create", categoryController.createFunc);
   router.put("/category/update", categoryController.updateFunc);
   router.delete("/category/delete", categoryController.deleteFunc);
+
+  // Heart
+  router.get("/heart/read", checkUserJWT, checkUserPermission, heartController.readFunc);
+  router.post("/heart/create", checkUserJWT, checkUserPermission, heartController.createFunc);
+  // router.put("/heart/update",checkUserJWT, checkUserPermission, heartController.updateFunc);
+  router.delete("/heart/delete", checkUserJWT, checkUserPermission, heartController.deleteFunc);
 
   return app.use("/api/v1", router);
 };

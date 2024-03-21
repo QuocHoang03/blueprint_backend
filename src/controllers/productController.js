@@ -18,9 +18,25 @@ const readFunc = async (req, res) => {
         EC: data.EC,
         DT: data.DT,
       });
+    } else if (req.query.page && req.query.limit && req.query.search) {
+      let { page, limit, search } = req.query;
+      let data = await productService.readProductWithSearch(+page, +limit, search);
+      return res.status(200).json({
+        EM: data.EM,
+        EC: data.EC,
+        DT: data.DT,
+      });
     } else if (req.query.page && req.query.limit) {
       let { page, limit } = req.query;
       let data = await productService.readProductWithPagination(+page, +limit);
+      return res.status(200).json({
+        EM: data.EM,
+        EC: data.EC,
+        DT: data.DT,
+      });
+    } else if (req.query.id) {
+      let { id } = req.query;
+      let data = await productService.readProductId(+id);
       return res.status(200).json({
         EM: data.EM,
         EC: data.EC,

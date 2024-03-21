@@ -113,6 +113,23 @@ module.exports = {
           url: "/category/delete",
           description: "Category Delete",
         },
+        // Heart
+        {
+          url: "/heart/read",
+          description: "Heart Read",
+        },
+        {
+          url: "/heart/create",
+          description: "Heart Create",
+        },
+        {
+          url: "/heart/update",
+          description: "Heart Update",
+        },
+        {
+          url: "/heart/delete",
+          description: "Heart Delete",
+        },
       ],
       {}
     );

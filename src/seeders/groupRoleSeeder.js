@@ -108,7 +108,56 @@ module.exports = {
           groupId: 1,
           roleId: 24,
         },
+        {
+          groupId: 1,
+          roleId: 25,
+        },
+        {
+          groupId: 1,
+          roleId: 26,
+        },
+        {
+          groupId: 1,
+          roleId: 27,
+        },
+        {
+          groupId: 1,
+          roleId: 28,
+        },
         // Dev
+        {
+          groupId: 2,
+          roleId: 25,
+        },
+        {
+          groupId: 2,
+          roleId: 26,
+        },
+        {
+          groupId: 2,
+          roleId: 27,
+        },
+        {
+          groupId: 2,
+          roleId: 28,
+        },
+        // Customer
+        {
+          groupId: 3,
+          roleId: 25,
+        },
+        {
+          groupId: 3,
+          roleId: 26,
+        },
+        {
+          groupId: 3,
+          roleId: 27,
+        },
+        {
+          groupId: 3,
+          roleId: 28,
+        },
       ],
       {}
     );

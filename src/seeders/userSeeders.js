@@ -12,14 +12,14 @@ module.exports = {
       "User",
       [
         {
-          lastName: "fake",
-          firstName: "1",
-          email: "fake1@gmail.com",
-          password: "111111",
-          address: "Quảng Ngãi",
-          phone: "011111111",
-          sex: "male",
-          groupId: 1,
+          // lastName: "fake",
+          // firstName: "1",
+          // email: "fake1@gmail.com",
+          // password: "111111",
+          // address: "Quảng Ngãi",
+          // phone: "011111111",
+          // sex: "male",
+          // groupId: 1,
         },
       ],
       {}
